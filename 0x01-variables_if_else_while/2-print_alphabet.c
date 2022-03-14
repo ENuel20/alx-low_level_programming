@@ -1,28 +1,19 @@
 #include <stdio.h>
 
 /**
- * main - prints all possible different combinations of two digits
- * Return: ALways 0 (Success)
+ * main - prints the alphabet in lowercase, and then in uppercase
+ *
+ * Return: Always 0 (Success)
  */
-int main(void)
-{
-int n, m;
 
-for (n = 48; n <= 56; n++)
+int  main(void)
 {
-for (m = 49; m <= 57; m++)
+char alp[26] = "abcdefghijklmnopqrstuvwxyz";
+int i;
+
+for (i = 0; i < 26; i++)
 {
-if (m > n)
-{
-putchar(n);
-putchar(m);
-if (n != 56 || m != 57)
-{
-putchar(',');
-putchar(' ');
-}
-}
-}
+putchar(alp[i]);
 }
 putchar('\n');
 return (0);
