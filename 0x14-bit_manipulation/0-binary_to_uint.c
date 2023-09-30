@@ -1,32 +1,7 @@
-#include "main.h"
-/**
- * _pow - function that return the
- * value of x raised to the power of y
- *
- * @x: parameter to base
- * @y: parameter of pow
- *
- * Return: End program
- */
-int _pow(int x, int y)
-{
-	if (y < 0)
-	{
-		return (-1);
-	}
-	else if (y == 0)
-	{
-		return (1);
-	}
-	else
-	{
-		y--;
-		x = x * _pow(x, y);
-		return (x);
-	}
+#include <stdio.h>
+#include <string.h>
 
-	return (0);
-}
+
 /**
  * binary_to_uint - function that converts a binary number to an
  * unsigned int
@@ -35,36 +10,27 @@ int _pow(int x, int y)
  *
  * Return: The number converted
  */
+
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int sum = 0;
-	int i, x, n;
+    unsigned int result = 0;
+    unsigned int lenght = strlen(b);
+    for ( int i = 0; i <= lenght; i++)
+    {
+        if(b[i] == '1')
+        {
+           result = (result << 1) | 1;
+        }
+        else if (b[i] == '0')
+        {
+           result = result << 1;
+        }
+        else{
+             // Invalid character in the binary string
+            printf("Invalid character in binary string: %c\n", b[i]);
+            return 0;
+        }
+    }
+    return result;
 
-	if (b == NULL)
-	{
-		return (0);
-	}
-
-	n = strlen(b) - 1;
-
-	/* Realizamos la operacion para hallar suma */
-	for (x = 0, i = 0; n >= x; n--)
-	{
-		switch (b[i])
-		{
-			case '1':
-				sum = sum + _pow(2, n);
-				i++;
-				break;
-			case '0':
-				sum = sum + 0;
-				i++;
-				break;
-			default:
-				return (0);
-		}
-	}
-
-	return (sum);
 }
-
