@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <string.h>
-
 
 /**
  * binary_to_uint - function that converts a binary number to an
@@ -15,7 +12,7 @@ unsigned int binary_to_uint(const char *b)
 {
     unsigned int result = 0;
     unsigned int lenght = strlen(b);
-    for ( int i = 0; i <= lenght; i++)
+    for ( int i = 0; i < lenght; i++)
     {
         if(b[i] == '1')
         {
@@ -34,3 +31,4 @@ unsigned int binary_to_uint(const char *b)
     return result;
 
 }
+
