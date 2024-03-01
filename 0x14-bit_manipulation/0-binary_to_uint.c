@@ -26,7 +26,6 @@ unsigned int binary_to_uint(const char *b)
 		else
 		{
 			printf("Invalid character in binary string: %c\n", b[i]);
-			return (0);
 		}
 	}
 	return (result);
