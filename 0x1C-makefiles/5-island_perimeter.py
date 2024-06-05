@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-"""A function with that returns the parameter of a island """
+"""A function with that returns the parameter of a island"""
 
 def island_perimeter(grid):
-    """ takes a parameter (grid) and returns the perimeter """
+    """takes a parameter (grid) and returns the perimeter"""
+
     height = len(grid)
     width = len(grid[0])
     size = 0
     edges = 0
-
     for i in range(height):
         for j in range(width):
             if grid[i][j] == 1:
